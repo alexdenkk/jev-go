@@ -25,6 +25,8 @@ func NewJevAPI(url, model, apiKey string) *JevAPI {
 }
 
 func (jev *JevAPI) SystemOne(request Request) (*Response, error) {
+	request.Model = jev.Model
+
 	body, err := json.Marshal(request)
 
 	if err != nil {
